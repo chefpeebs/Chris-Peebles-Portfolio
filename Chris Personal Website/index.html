@@ -1,0 +1,667 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="Chris Peebles is a New York City saxophonist, composer, arranger, and music educator.">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>Chris Peebles | Saxophonist, Composer & Arranger</title>
+
+    <style>
+        :root {
+            --background: #ffffff;
+            --text: #171717;
+            --secondary: #666666;
+            --border: #e5e5e5;
+            --soft: #f6f6f6;
+            --content-width: 1040px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        body {
+            background: var(--background);
+            color: var(--text);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+
+        a:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible,
+        button:focus-visible {
+            outline: 2px solid #333;
+            outline-offset: 4px;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        .container {
+            width: min(var(--content-width), calc(100% - 48px));
+            margin: 0 auto;
+        }
+
+        /* Navigation */
+
+        .site-header {
+            background: var(--background);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .navigation {
+            min-height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .logo {
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: -0.04em;
+            white-space: nowrap;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            font-size: 0.875rem;
+        }
+
+        .nav-links a {
+            color: var(--secondary);
+        }
+
+        .nav-links a:hover {
+            color: var(--text);
+        }
+
+        /* Introduction */
+
+        .hero {
+            padding: 92px 0 80px;
+            display: grid;
+            grid-template-columns: 1fr 0.85fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .eyebrow {
+            margin-bottom: 18px;
+            color: var(--secondary);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            max-width: 600px;
+            font-size: clamp(2.8rem, 6vw, 4.8rem);
+            line-height: 1.06;
+            letter-spacing: -0.065em;
+            font-weight: 600;
+        }
+
+        .hero-description {
+            max-width: 490px;
+            margin-top: 24px;
+            color: var(--secondary);
+            font-size: 1.05rem;
+        }
+
+        .hero-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            margin-top: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .hero-links a {
+            padding-bottom: 3px;
+            border-bottom: 1px solid var(--text);
+        }
+
+        /* Get Photos from Aaron. */
+
+        .photo-placeholder {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            max-height: 460px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            background: var(--soft);
+            border: 1px solid var(--border);
+            color: #888;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        .photo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Sections */
+
+        .section {
+            padding: 64px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .section-header {
+            margin-bottom: 32px;
+        }
+
+        .section-header h2 {
+            font-size: 1.8rem;
+            line-height: 1.3;
+            letter-spacing: -0.045em;
+            font-weight: 600;
+        }
+
+        .section-header p {
+            max-width: 600px;
+            margin-top: 10px;
+            color: var(--secondary);
+        }
+
+        .about-copy {
+            max-width: 720px;
+            color: #454545;
+        }
+
+        .about-copy p + p {
+            margin-top: 18px;
+        }
+
+        /* Selected work */
+
+        .work-list {
+            border-top: 1px solid var(--border);
+        }
+
+        .work-item {
+            display: grid;
+            grid-template-columns: 190px 1fr auto;
+            gap: 28px;
+            align-items: baseline;
+            padding: 24px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .work-category {
+            color: var(--secondary);
+            font-size: 0.8rem;
+        }
+
+        .work-item h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+        }
+
+        .work-item p {
+            margin-top: 5px;
+            color: var(--secondary);
+            font-size: 0.9rem;
+        }
+
+        .work-link {
+            font-size: 0.85rem;
+            white-space: nowrap;
+        }
+
+        /* Contact */
+
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 64px;
+            align-items: start;
+        }
+
+        .contact-intro {
+            color: var(--secondary);
+            margin-top: 12px;
+        }
+
+        .contact-form {
+            width: 100%;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px 13px;
+            border: 1px solid #d8d8d8;
+            border-radius: 2px;
+            background: white;
+            color: var(--text);
+            font: inherit;
+            font-size: 0.95rem;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: 2px solid #777;
+            outline-offset: 1px;
+        }
+
+        textarea {
+            min-height: 145px;
+            resize: vertical;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #888;
+        }
+
+        .submit-button {
+            padding: 12px 20px;
+            background: var(--text);
+            color: white;
+            border: 1px solid var(--text);
+            border-radius: 2px;
+            font: inherit;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            background: #444;
+        }
+
+        .hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Footer */
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 24px 0;
+        }
+
+        .footer-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            color: var(--secondary);
+            font-size: 0.8rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        @media (max-width: 760px) {
+            .container {
+                width: calc(100% - 36px);
+            }
+
+            .navigation {
+                align-items: flex-start;
+                flex-direction: column;
+                justify-content: center;
+                gap: 10px;
+                padding: 16px 0;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 16px;
+                font-size: 0.8rem;
+            }
+
+            .hero {
+                padding: 58px 0;
+                grid-template-columns: 1fr;
+                gap: 34px;
+            }
+
+            .photo-placeholder {
+                max-height: 400px;
+                aspect-ratio: 5 / 4;
+            }
+
+            .section {
+                padding: 48px 0;
+            }
+
+            .work-item {
+                grid-template-columns: 1fr auto;
+                gap: 8px 16px;
+            }
+
+            .work-category {
+                grid-column: 1 / -1;
+            }
+
+            .work-link {
+                grid-column: 2;
+                grid-row: 2;
+            }
+
+            .contact-layout {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .container {
+                width: calc(100% - 28px);
+            }
+
+            .nav-links {
+                gap: 12px;
+            }
+
+            .footer-content {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <nav class="navigation container" aria-label="Main navigation">
+            <a class="logo" href="#home">Chris Peebles</a>
+
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#work">Work</a>
+                <a href="#teaching">Teaching</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <section class="hero" id="home">
+            <div>
+                <p class="eyebrow">Saxophonist · Composer · Arranger · Bandleader</p>
+
+                <h1>Chris Peebles</h1>
+
+                <p class="hero-description">
+                    New York City musician and band leader.
+                </p>
+
+                <div class="hero-links">
+                    <a href="#work">Selected work</a>
+                    <a href="#contact">Booking inquiries</a>
+                </div>
+            </div>
+
+            <div class="photo-placeholder">
+                <!--
+                    Replace this placeholder with your own photograph.
+
+                    1. Create a folder named "images" beside index.html.
+                    2. Put your photograph inside it.
+                    3. Replace this div's contents with:
+
+                    <img src="images/chris-performing.jpg"
+                         alt="Chris Peebles performing on saxophone">
+
+                    Adjust the filename to match your actual image.
+                -->
+                <p>Your performance photograph goes here.</p>
+            </div>
+        </section>
+
+        <section class="section" id="about">
+            <div class="section-header">
+                <h2>About</h2>
+            </div>
+
+            <div class="about-copy">
+                <p>
+                    Chris Peebles is a New York City–based saxophonist,
+                    composer, arranger, and music educator with over
+                    a decade of professional experience.
+                </p>
+
+                <p>
+                    Chris has worked with Jazz at Lincoln Center and
+                    Todd Stoll on big-band and large-ensemble charts
+                    for younger bands. He has also worked alongside
+                    Branford Marsalis on <em>A Wonderful World: The
+                    Louis Armstrong Musical</em>, and tours and writes
+                    for Reliably Bad.
+                </p>
+            </div>
+        </section>
+
+        <section class="section" id="work">
+            <div class="section-header">
+                <h2>Selected Work</h2>
+                <p>
+                    Recordings, performances, and writing projects.
+                </p>
+            </div>
+
+            <div class="work-list">
+
+                <article class="work-item">
+                    <span class="work-category">Performance</span>
+                    <div>
+                        <h3>Selected Recordings</h3>
+                        <p>
+                            Jazz performance and collaborative projects.
+                        </p>
+                    </div>
+                    <!-- Replace #contact with a recording or video URL. -->
+                    <a class="work-link" href="#contact">
+                        Listen ↗
+                    </a>
+                </article>
+
+                <article class="work-item">
+                    <span class="work-category">Arranging</span>
+                    <div>
+                        <h3>Arrangements & Commissions</h3>
+                        <p>
+                            Writing for jazz ensembles and other projects.
+                        </p>
+                    </div>
+                    <a class="work-link" href="#contact">
+                        Inquire ↗
+                    </a>
+                </article>
+
+                <article class="work-item">
+                    <span class="work-category">Composition</span>
+                    <div>
+                        <h3>Original Music</h3>
+                        <p>
+                            Compositions and creative collaborations.
+                        </p>
+                    </div>
+                    <a class="work-link" href="#contact">
+                        Explore ↗
+                    </a>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="section" id="teaching">
+            <div class="section-header">
+                <h2>Teaching</h2>
+            </div>
+
+            <div class="about-copy">
+                <p>
+                    Chris teaches music with an emphasis on creativity,
+                    listening, curiosity, and developing confident,
+                    independent musicians.
+                </p>
+                <p>
+                    For lesson inquiries or educational collaborations,
+                    please get in touch.
+                </p>
+            </div>
+        </section>
+
+        <section class="section" id="contact">
+            <div class="contact-layout">
+                <div>
+                    <div class="section-header">
+                        <h2>Contact</h2>
+                    </div>
+
+                    <p class="contact-intro">
+                        For bookings, arranging commissions,
+                        collaborations, and other inquiries,
+                        send a message.
+                    </p>
+                </div>
+
+                <form
+                    class="contact-form"
+                    name="contact"
+                    method="POST"
+                    data-netlify="true"
+                    netlify-honeypot="bot-field"
+                >
+                    <input type="hidden" name="form-name" value="contact">
+
+                    <p class="hidden">
+                        <label>
+                            Leave this field empty:
+                            <input name="bot-field" tabindex="-1"
+                                   autocomplete="off">
+                        </label>
+                    </p>
+
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input
+                            id="name"
+                            name="name"
+                            type="text"
+                            autocomplete="name"
+                            placeholder="Your name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input
+                            id="email"
+                            name="email"
+                            type="email"
+                            autocomplete="email"
+                            placeholder="you@example.com"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            placeholder="How can I help?"
+                            required
+                        ></textarea>
+                    </div>
+
+                    <button class="submit-button" type="submit">
+                        Send message
+                    </button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p>© <span id="year">2026</span> Chris Peebles</p>
+
+            <div class="footer-links">
+                <!-- Add your actual profile URLs here. -->
+                <a href="#work">Music</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+    </script>
+
+</body>
+</html>
